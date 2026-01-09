@@ -1,0 +1,6 @@
+id,title,content,author,created_at
+1,"Hello World in Java","public class HelloWorld {\n  public static void main(String[] args) {\n    System.out.println(\"Hello, World!\");\n  }\n}","alice","2024-01-15 10:30:00"
+2,"React useState Example","import { useState } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n  return (\n    <div>\n      <p>Count: {count}</p>\n      <button onClick={() => setCount(count + 1)}>\n        Increment\n      </button>\n    </div>\n  );\n}","bob","2024-01-16 14:20:00"
+3,"Spring Bean Configuration","@Configuration\npublic class AppConfig {\n  @Bean\n  public MyService myService() {\n    return new MyServiceImpl();\n  }\n}","charlie","2024-01-17 09:15:00"
+4,"Dockerfile for Java App","FROM openjdk:17-jdk-slim\nWORKDIR /app\nCOPY target/*.jar app.jar\nEXPOSE 8080\nENTRYPOINT [\"java\", \"-jar\", \"app.jar\"]","diana","2024-01-18 16:45:00"
+5,"SQL Window Function","SELECT \n  employee_id,\n  department_id,\n  salary,\n  AVG(salary) OVER (PARTITION BY department_id) as avg_dept_salary\nFROM employees;","eve","2024-01-19 11:00:00"

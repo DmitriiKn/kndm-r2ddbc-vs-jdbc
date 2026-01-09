@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: 001-create-gist-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: data/001-insert-test-data.yaml
+      relativeToChangelogFile: true

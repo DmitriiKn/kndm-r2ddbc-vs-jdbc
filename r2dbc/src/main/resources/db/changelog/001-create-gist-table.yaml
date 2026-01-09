@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-gist-table
+      author: your_name
+      comment: Create gist table for reactive demo
+      changes:
+        - createTable:
+            tableName: gist
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: content
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: author
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+            remarks: Table for storing code snippets (gists)
+
+        - addDefaultValue:
+            tableName: gist
+            columnName: created_at
+            defaultValueComputed: CURRENT_TIMESTAMP
+
+        - createSequence:
+            sequenceName: gist_seq
+            startValue: 1
+            incrementBy: 1
+
+        - sql:
+            sql: COMMENT ON TABLE gist IS 'GitHub Gist like snippets table'
