@@ -1,3 +1,21 @@
 spring:
   application:
     name: r2dbc
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    url: jdbc:postgresql://localhost:5432/gistdb
+    user: postgres
+    password: postgres
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/gistdb
+    username: ${spring.liquibase.user}
+    password: ${spring.liquibase.password}
+
+logging:
+  level:
+    reactor.util.Loggers: DEBUG
+    org.springframework.web: TRACE
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
