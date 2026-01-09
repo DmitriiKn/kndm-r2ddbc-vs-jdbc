@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-insert-test-data
+      author: your_name
+      comment: Insert test data for demonstration
+      context: test,development
+      changes:
+        - loadData:
+            tableName: gist
+            file: test_gists.csv
+            relativeToChangelogFile: true
+            separator: ","
+            quotchar: '"'
